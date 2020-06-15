@@ -15,7 +15,7 @@ Struct pedir_dos_valores(){
 	scanf("%f", &s1.a);
 	
 	printf("\nIngrese el segundo numero: ");
-        scanf("%f", &s1.b);
+    scanf("%f", &s1.b);
     
 	printf("\n");
 	
@@ -50,29 +50,30 @@ int main(){
 			case 3:
 				printf("\n\tOperacion Multiplicacion");
 				valores= pedir_dos_valores();
-				if(a>0 && b>0)
+				if(valores.a>0 && valores.b>0)
 				{
 	                resultado = multiplicar(valores.a ,valores.b);
+	                printf("\nEl resultado de multiplicar %2.f * %2.f es: %2.f\n\n", valores.a, valores.b, resultado);
             	}
 	            else
 	            {
 		            printf("\nNO SE PUEDE HACER LA MULTIPLICACION\n");
+		            break;
 	            }
-				printf("\nEl resultado de multiplicar %2.f * %2.f es: %2.f\n\n", valores.a, valores.b, resultado);
 				break;
 				
 			case 4:
 				printf("\n\tOperacion Division");
 				valores= pedir_dos_valores();
-				if(b>0)
+				if(valores.b>0)
 				{
 					resultado = division(valores.a ,valores.b);
+					printf("\nEl resultado de dividir %.2f / %.2f es: %.2f\n\n", valores.a, valores.b, resultado);
             	}
 	            else
 	            {
 		            printf("\nNO SE PUEDE HACER LA DIVISION\n\n");
 	            }
-				printf("\nEl resultado de dividir %.2f / %.2f es: %.2f\n\n", valores.a, valores.b, resultado);
 				break;		
 					
 			case 5:

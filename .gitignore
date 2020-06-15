@@ -1,0 +1,3 @@
+#ignore some c files
+*.h.gch
+*.exe

@@ -1,11 +1,21 @@
 
 /*Funcion que suma dos numeros enteros*/
-int sumar(int a, int b)
+float sumar(float a, float b)
 {
-	return a + b;
+	return a+b;
 }
 
-int restar(int c,int d)
+float restar(float a, float b)
 {
-	return c-d;
+	return a-b;
+}
+
+float multiplicar(float a, float b)
+{
+	return a*b;
+}
+
+float division(float a, float b)
+{
+	return a/b;
 }

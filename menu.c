@@ -4,55 +4,40 @@ int opcion;
 
 int main(){
 	
-	int resultado;
-
+	float resultado;
+	float a,b;
+	
 	do{
+		printf("\nIngrese el primer numero: ");
+	    scanf("%f", &a);
+	    printf("\nIngrese el segundo numero: ");
+     	scanf("%f", &b);
+	    printf("\n");
+		
 		opcion = menu();
 		switch(opcion)
 		{
 			case 1:
-				//titulo 
-				printf("\n\t Operacion suma");
-				//variables
-				int a,b;
-				printf("\nIngrese el primer numero: ");
-				scanf("%d", &a);
-				printf("Ingrese el segundo numero: ");
-				scanf("%d", &b);
-				//mandar llamar funcion suma
+				printf("\n\tOperacion suma");
+			
 				resultado = sumar(a,b);
-				//imprimir resultado
-				printf("\nResultado de sumar %d + %d es: %d\n\n", a, b, resultado);
+			
+				printf("\nResultado de sumar %.2f + %.2f es: %2.f\n\n", a, b, resultado);
 				break;
 				
 			case 2:
-				printf("\n\t Operacion resta");
+				printf("\n\tOperacion resta");
 				
-				int c,d;
-				
-				printf("\nIngrese el primer numero: ");
-				scanf("%d", &c);
-				printf("Ingrese el segundo numero: ");
-				scanf("%d", &d);
-				
-				resultado = restar(c,d);
-				//imprimir resultado
-				printf("\nResultado de restar %d - %d es: %d\n\n",c,d, resultado);
+				resultado = restar(a,b);
+			
+				printf("\nResultado de restar %2.f - %2.f es: %2.f\n\n",a, b,resultado);
 				break;
+			
 			case 3:
-				printf("\n\t Operacion Multiplicacion");
-				
-				int e,f;
-				
-				printf("\nIngrese el primer numero: ");
-				scanf("%d",&e);
-				
-				printf("\nIngrese el segundo numero: ");
-				scanf("%d",&f);
-				
-				if(e>0 && f>0)
+				printf("\n\tOperacion Multiplicacion");
+				if(a>0 && b>0)
             	{
-	                resultado= multiplicar(e,f);
+	                resultado= multiplicar(a,b);
             	}
 	            else
 	            {
@@ -60,24 +45,24 @@ int main(){
 	            }
 	            break;
 	            
-				printf("\nEl resultado de multiplicar %d * %d es: %d\n\n",e,f,resultado);
+				printf("\nEl resultado de multiplicar %2.f * %2.f es: %2.f\n\n",a,b,resultado);
 				break;
 				
 			case 4:
-				printf("\n\t Operacion Division");
-				
-				float g,h;
-				float resultado=0.0;
-				
-				printf("\nIngrese el primer numero: ");
-				scanf("%f",&g);
-				
-				printf("\nIngrese el segundo numero: ");
-				scanf("%f",&h);
+				printf("\n\tOperacion Division");
+				if(b>0)
+            	{
+	                resultado= division(a,b);
+            	}
+	            else
+	            {
+		            printf("\nNO SE PUEDE HACER LA DIVISION\n");
+	            }
+	            break;
 					
-				resultado= division(g,h);
+				resultado= division(a,b);
 				
-				printf("\nEl resultado de dividir %.2f / %.2f es: %.2f\n\n",g,h,resultado);
+				printf("\nEl resultado de dividir %.2f / %.2f es: %.2f\n\n",a,b,resultado);
 				break;		
 					
 			case 5:
@@ -94,7 +79,6 @@ int main(){
 	
 	return;
 }
-
 
 int menu()
 {	

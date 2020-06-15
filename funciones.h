@@ -1,29 +1,21 @@
 
 /*Funcion que suma dos numeros enteros*/
-int sumar(int a, int b)
+float sumar(float a, float b)
 {
-	return a + b;
+	return a+b;
 }
 
-int restar(int c,int d)
+float restar(float a,float b)
 {
-	return c-d;
+	return a-b;
 }
 
-int multiplicar(int e,int f)
+float multiplicar(float a,float b)
 {
-	if(e>0 && f>0)
-	{
-	   return e*f;
-	}
-	else
-	{
-		printf("\nNO SE PUEDE HACER LA MULTIPLICACION\n");
-	}
-	
+	return a*b;
 }
 
-float division(float g,float h)
+float division(float a,float b)
 {
-	return g/h;
+	return a/b;
 }

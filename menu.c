@@ -1,28 +1,44 @@
 #include <stdio.h>
 #include "funciones.h"
+
 int opcion;
+struct dos_numeros{
+	float a, b;
+};
+
+typedef struct dos_numeros Struct;
+
+Struct pedir_dos_valores(){
+	
+	Struct s1;
+	printf("\nIngrese el primer numero: ");
+	scanf("%f", &s1.a);
+	
+	printf("\nIngrese el segundo numero: ");
+    scanf("%f", &s1.b);
+    
+	printf("\n");
+	
+	return s1;
+}
 
 int main(){
 	
 	float resultado;
 	float a,b;
+	Struct valores;
 	
 	do{
-		printf("\nIngrese el primer numero: ");
-	    scanf("%f", &a);
-	    printf("\nIngrese el segundo numero: ");
-     	scanf("%f", &b);
-	    printf("\n");
 		
 		opcion = menu();
 		switch(opcion)
 		{
 			case 1:
 				printf("\n\tOperacion suma");
+				valores = pedir_dos_valores();
+				resultado = sumar(valores.a ,valores.b);
 			
-				resultado = sumar(a,b);
-			
-				printf("\nResultado de sumar %.2f + %.2f es: %2.f\n\n", a, b, resultado);
+				printf("\nResultado de sumar %.2f + %.2f es: %2.f\n\n", valores.a, valores.b, resultado);
 				break;
 				
 			case 2:
@@ -93,3 +109,5 @@ int menu()
 	printf(" ");
 	return opcion;
 }
+
+

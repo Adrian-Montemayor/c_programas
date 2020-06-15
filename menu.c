@@ -37,62 +37,57 @@ int main(){
 				printf("\n\tOperacion suma");
 				valores = pedir_dos_valores();
 				resultado = sumar(valores.a ,valores.b);
-			
-				printf("\nResultado de sumar %.2f + %.2f es: %2.f\n\n", valores.a, valores.b, resultado);
+				printf("\nResultado de sumar %.2f + %.2f es: %2.f\n\n ", valores.a, valores.b, resultado);
 				break;
 				
 			case 2:
 				printf("\n\tOperacion resta");
-				
-				resultado = restar(a,b);
-			
-				printf("\nResultado de restar %2.f - %2.f es: %2.f\n\n",a, b,resultado);
+				valores= pedir_dos_valores();
+				resultado = restar(valores.a ,valores.b);
+				printf("\nResultado de restar %2.f - %2.f es: %2.f\n\n ", valores.a, valores.b, resultado);
 				break;
 			
 			case 3:
 				printf("\n\tOperacion Multiplicacion");
+				valores= pedir_dos_valores();
 				if(a>0 && b>0)
             	{
-	                resultado= multiplicar(a,b);
+	                resultado = multiplicar(valores.a ,valores.b);
             	}
 	            else
 	            {
 		            printf("\nNO SE PUEDE HACER LA MULTIPLICACION\n");
 	            }
 	            break;
-	            
-				printf("\nEl resultado de multiplicar %2.f * %2.f es: %2.f\n\n",a,b,resultado);
+				printf("\nEl resultado de multiplicar %2.f * %2.f es: %2.f\n\n", valores.a, valores.b, resultado);
 				break;
 				
 			case 4:
 				printf("\n\tOperacion Division");
+				valores= pedir_dos_valores();
 				if(b>0)
             	{
-	                resultado= division(a,b);
+	                resultado = division(valores.a ,valores.b);
             	}
 	            else
 	            {
-		            printf("\nNO SE PUEDE HACER LA DIVISION\n");
+		            printf("\nNO SE PUEDE HACER LA DIVISION\n\n");
 	            }
-	            break;
-					
-				resultado= division(a,b);
-				
-				printf("\nEl resultado de dividir %.2f / %.2f es: %.2f\n\n",a,b,resultado);
+	            break;	
+				printf("\nEl resultado de dividir %.2f / %.2f es: %.2f\n\n", valores.a, valores.b, resultado);
 				break;		
 					
 			case 5:
 				//salir del programa
 				printf("\nUsted ha salido del programa...\n");
 				break;
-				
+			
 			default:
 				//cualquier otro numero
 				printf("\nEscoja una accion valida\n");
 				break;
 		}
-	}while(opcion != 5);		
-	
+	}while(opcion != 5);
 	return;
 }
 

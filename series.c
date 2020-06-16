@@ -28,6 +28,10 @@ int main()
 		{
 			variable=variable-1;
 		}
+		if(i==0)
+		{
+			printf("[1]");
+		}
 		printf("[%d]",variable);
 	}
 	

@@ -1,29 +1,28 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "funciones.h"
 
 int opcion;
-struct dos_numeros{
+struct dos_numeros
+{
 	float a, b;
 };
 
 typedef struct dos_numeros Struct;
 
-Struct pedir_dos_valores(){
-	
+Struct pedir_dos_valores()
+{
 	Struct s1;
 	printf("\nIngrese el primer numero: ");
 	scanf("%f", &s1.a);
-	
 	printf("\nIngrese el segundo numero: ");
     scanf("%f", &s1.b);
-    
 	printf("\n");
-	
 	return s1;
 }
 
-int main(){
-	
+int main()
+{
 	float resultado;
 	float a,b;
 	Struct valores;
@@ -74,9 +73,18 @@ int main(){
 	            {
 		            printf("\nNO SE PUEDE HACER LA DIVISION\n\n");
 	            }
-				break;		
-					
+				break;
+				
 			case 5:
+				srand(time(NULL));
+				int n;
+				printf("\n\tObtener valor maximo de un arreglo: ");
+				printf("\nDigite el tamanio del arreglo: ");
+			    scanf("%d",&n);
+				printf("\nEl numero mayor es: %d\n",obtener_maximo(n));
+				break;
+					 
+			case 6:
 				//salir del programa
 				printf("\nUsted ha salido del programa...\n");
 				break;
@@ -86,7 +94,7 @@ int main(){
 				printf("\nEscoja una accion valida\n");
 				break;
 		}
-	}while(opcion != 5);
+	}while(opcion != 6);
 	return;
 }
 
@@ -97,7 +105,8 @@ int menu()
 	printf("\n\t 2.- Restar");
 	printf("\n\t 3.- Multiplicar");
 	printf("\n\t 4.- Division");
-	printf("\n\t 5.- Salir");
+	printf("\n\t 5.- obtener_maximo");
+	printf("\n\t 6.- Salir");
 	printf("\n>");
 	scanf("%d", &opcion);
 	printf(" ");

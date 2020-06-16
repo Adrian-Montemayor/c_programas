@@ -4,7 +4,7 @@
 int main()
 {
 	int i,n;
-	int contador=0;
+	int contador=2;
 	int variable=1;
 
 	
